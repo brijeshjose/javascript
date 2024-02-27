@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+    <h1>welcome</h1>
+</head>
+<body>
+    <p class="two">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dolorum delectus similique voluptatum hic doloremque maiores consectetur veritatis alias beatae itaque expedita quam reiciendis possimus eius mollitia, consequuntur soluta a.</p>
+    <i>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium fuga facere, impedit aliquid ea consequuntur reiciendis omnis. Dicta, aperiam quam! Qui ab distinctio tempore at quisquam fugiat veniam ad quidem.</i>
+     <h4 class="two">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus veritatis fuga, doloribus blanditiis voluptatibus inventore quod qui eveniet sit similique dolor minus molestias deleniti in iste fugiat, quo aut earum!</h4>   
+
+     <button onclick="buttonClick()"class="two">clickme</button>
+     
+     <script>
+         
+        function buttonClick(){
+            const documentClass=document.getElementsByClassName("two")
+            console.log(Array.from(documentClass).map((item)=>item.style.background="red"));
+          }
+     </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <center>
+    <h1 style="color: brown;"> Question Generator </h1>
+
+    <button onclick="displayData()"> Question</button>
+    </center>
+
+</body>
+<script>
+    
+                        //1 fetch()
+                        fetch(`https://opentdb.com/api.php?amount=1&type=multiple`)
+                        .then(data=>data.json())
+                        .then(Todoarray=>displayData(Todoarray))
+                     
+                        //2 display array of data into browser window
+                        function displayData(Todoarray){
+                            
+                                 alert(`${Todoarray.results[0].question}`);
+                                
+                            }                      
+                         
+
+                    </script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lettercolorbackground</title>
+</head>
+<body>
+    <p >this is first paragraph</p>
+    <p>this is second paragraph</p>
+    <p>this is third paragraph</p>
+    <button onclick="GetTag()">clickme</button>
+    <script>
+        function GetTag(){
+            var doc=document.getElementsByTagName("p")
+            console.log(doc);
+        [...doc].map(item=>{
+            item.style.color="blue"
+            item.style.background="pink"
+        })
+        }
+    </script>
+</body>
+</html>

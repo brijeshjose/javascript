@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+   
+    .card,#result{
+        
+       
+        margin-left: 20px;
+        margin-top: 20px;
+        display:inline-block;
+        background-color: antiquewhite;
+    }
+</style>
+<body>
+   
+    <div id="result">
+        <script>
+        const response=new XMLHttpRequest();
+        response.open(`get`,`https://jsonplaceholder.typicode.com/users`)
+        response.send()
+        response.onreadystatechange=()=>{
+        if(response.readyState==4){
+                                if(response.status>199 && response.status<300){
+                                    console.log(response.responseText);
+                                    let Todoarray=JSON.parse(response.responseText)
+                                    console.log(Todoarray);
+                                    displayData(Todoarray)
+                                }else{
+                                    alert("cant find")
+                                }
+                            }
+                        }
+
+                            function displayData(Todoarray){
+                            for(let todo of Todoarray){
+                                htmlData=`<div class="card" style="width: 18rem;">
+                                          <ul class="list-group list-group-flush">
+                                           <li class="list-group-item">id:${todo.id}</li>
+                                          <li class="list-group-item">name:${todo.name}</li>
+                                          <li class="list-group-item">username:${todo.username}</li>
+                                          <li class="list-group-item">email:${todo.email}</li>
+                                          <li class="list-group-item">Address</li>
+                                          <li class="list-group-item">street:${todo.address.street}</li>
+                                          <li class="list-group-item">suite:${todo.address.suite}</li>
+                                          <li class="list-group-item">city:${todo.address.city}</li>
+                                          <li class="list-group-item">zipcode:${todo.address.zipcode}</li>
+                                          <li class="list-group-item">Geo</li>
+                                          <li class="list-group-item">lat:${todo.address.geo.lat}</li>
+                                          <li class="list-group-item">lng:${todo.address.geo.lng}</li>
+                                          <li class="list-group-item">phone:${todo.phone}</li>
+                                          <li class="list-group-item">website:${todo.website}</li>
+                                          <li class="list-group-item">Company</li>
+                                          <li class="list-group-item">name:${todo.company.name}</li>
+                                          <li class="list-group-item">catchPhrase:${todo.company.catchPhrase}</li>
+                                          <li class="list-group-item">bs:${todo.company.bs}</li>
+                                             </ul>
+                                              </div>`
+
+                                    result.innerHTML+=htmlData
+                            }
+                        }
+                                              
+</script>
+ </div>
+</body>
+</html>

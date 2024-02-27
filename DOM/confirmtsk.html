@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>task</title>
+</head>
+<body>
+    <table border="2px">
+        <tr>
+         <th>Id</th>
+        <th>Product</th>
+        <th>Action</th>
+    </tr>
+        <tr>
+            <td>200043</td>
+            <td><img src="https://m.media-amazon.com/images/I/71wMe41xHhL._SX679_.jpg " height="90px"></td>
+            <td><button onclick="deletefunction()"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+        <tr>
+            <td>200043</td>
+            <td><img src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/800w/products/8418/17748/52Flower40__60663.1506574181.jpg?c=2 " height="100px" width="90px"></td>
+            <td><button onclick="deletefunction()"><i class="fa-solid fa-trash"></i></button></td>
+         </tr>
+
+    </table>
+   
+    <script>
+        function deletefunction(){
+            let dlt=confirm("are you confirm about to delete it")
+            if(dlt==true){
+                console.log("user cofirmed the action.")
+               
+            }else{
+                console.log("user cancelled the action.")
+                }
+        }
+        </script>
+    </body>
+</html>

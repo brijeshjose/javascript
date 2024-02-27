@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom properties</title>
+</head>
+<body>
+                        <!---1html code-->
+    <!--child through parent-->
+    <div id="parent">
+        <p id="child">child element</p>
+    </div>
+    <!----child  node-->
+    <ul id="listitems">
+        <li>child1</li>
+        <li>child2</li>
+        <li>child3</li>
+        <li>child4</li>
+    </ul>
+    <!--Using inner html:gets or set the html content of an element-->
+    <div id="divElmt">
+        <p>Luminar techno Lab</p>
+    </div>
+    <!--text content:gets or sets html contents of an element-->
+    <div>
+        <p id="para">Full stack developer</p>
+    </div>
+</body>
+                           <!--javascript code-->
+<script>
+    const childElement=document.getElementById('child')
+    console.log(childElement);
+    const parentElement=childElement.parentNode
+    console.log(parentElement);
+
+
+    const parentElmt=document.getElementById("listitems")
+    console.log(parentElmt);
+    const childElmt=parentElmt.childNodes
+    console.log(childElmt);
+
+    const divElement=document.getElementById("divElmt")
+    console.log(divElement);
+    divElement.innerHTML=`<p style="color:blue">It finishing school</p>`
+
+    const paraElement=document.getElementById('para')
+    paraElement.textContent="MEARN STACK DEVELOPER"
+</script>
+</html>

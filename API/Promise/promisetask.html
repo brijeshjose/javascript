@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Todo Data</title>
+</head>
+<body>
+    <h1 class="text-center text-primary">Todo Data</h1>
+    <div class="row">
+
+        <div class="col-4"></div>
+        <div class="col-4">
+            <table class="border border-3 border-primary">
+                <thead>
+                    <tr>
+                        <th class="border border-3 border-primary">userid</th>
+                        <th class="border border-3 border-primary">id</th>
+                        <th class="border border-3 border-primary">title</th>
+                        <th>completed</th>
+                    </tr>
+                </thead>
+                <tbody id="result">
+                    <script>
+                        //1 fetch()
+                        fetch(`https://dummyjson.com/carts`)
+                        .then(data=>data.json())
+                        .then(Todoarray=>displayData(Todoarray))
+                     
+                        //2 display array of data into browser window
+                        function displayData(Todoarray){
+                            for(let i=0;i<=8;i++){
+                                htmlData=  
+                                `<tr>
+                                            
+                                    <td class="border border-3 border-primary" >${Todoarray.carts[i].products[i].id}</td>
+                                    <td class="border border-3 border-primary" >${Todoarray.carts[i].products[i].title}</td>
+                                    <td class="border border-3 border-primary" >${Todoarray.carts[i].products[i].price}</td>
+                                    <td class="border border-3 border-primary" >${Todoarray.carts[i].products[i].quantity}</td>
+                                    <td class="border border-3 border-primary"><img src=" ${Todoarray.carts[i].products[i].thumbnail}"> </td>        
+                                    </tr>`
+                                    result.innerHTML+=htmlData
+                            }      }                
+                         
+
+                    </script>
+
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</body>
+</html>

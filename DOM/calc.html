@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Calculator</div>
+        <input id="result" type="text" class="result">
+       
+        <div class="second-row">
+          <input type="button"onclick="displaynum(7)"name="" value="7" class="global">
+          <input type="button" onclick="displaynum(8)"name="" value="8" class="global">
+          <input type="button" onclick="displaynum(9)"name="" value="9" class="global">
+          <input type="button"onclick="displaynum('*')" name="" value="*" class="global">
+        </div>
+        <div class="third-row">
+          <input type="button" onclick="displaynum(4)"name="" value="4" class="global">
+          <input type="button"onclick="displaynum(5)" name="" value="5" class="global">
+          <input type="button"onclick="displaynum(6)" name="" value="6" class="global">
+          <input type="button"onclick="displaynum('-')" name="" value="-" class="global">
+        </div>
+        <div class="fourth-row">
+          <input type="button"onclick="displaynum(1)" name="" value="1" class="global">
+          <input type="button"onclick="displaynum(2)" name="" value="2" class="global">
+          <input type="button" onclick="displaynum(3)"name="" value="3" class="global">
+          <input type="button"onclick="displaynum('+')" name="" value="+" class="global">
+        </div>
+        <div class="fourth-row">
+            <input type="button"onclick="removelastitem()" name="" value="&#9003"  class="global">
+            <input type="button" onclick="displaynum(0)"name="" value="0" class="global">
+            <input type="button"onclick="displaynum('.')" name="" value="." class="global">
+            <input type="button"onclick="displaynum('/')" name="" value="/" class="global">
+          </div>
+        <div class="conflict">
+          <div class="left">
+            
+            <input type="button"onclick="clearbox()" name="" value="AC" class=" red small white-text top-margin">
+            <input type="button" onclick="evaluateExp()" value="=" class=" green white-text big top-margin">
+           
+          </div>
+        
+            
+         
+        </div>
+      </div>
+</body>
+<script src="./calc.js"></script>
+</html>

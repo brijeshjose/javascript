@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1 id="head">DOM manipulation</h1>
+    <ul>
+        <li class="cls">document.getElementById()</li>
+        <li>document.getElementsByClassName()</li>
+        <li class="cls">document.getElementsByTagName()</li>
+        <li>document.querySelector()</li>
+        <li>document.querySelectorAll()</li>
+    </ul>
+    <button onclick="buttonClick()"class="btn">clickme</button>
+    <script>
+        //getElementById()
+        const documentId=document.getElementById("head")
+        console.log(documentId);
+        documentId.style.color="red"
+        //getElementsByClassName()
+        const documentClass=document.getElementsByClassName("cls")
+        console.log(documentClass);
+        console.log(Array.from(documentClass));//creating array for styling
+        console.log(Array.from(documentClass).map((item)=>item.style.color="blue"));//array creation and mapping each 
+        //getElementsByTagName()
+        const documentTagName=document.getElementsByTagName("li")//tag name
+        console.log(documentTagName);
+        console.log([...documentTagName])//using spread operator
+        console.log([...documentTagName].map((item)=>item.style.color="blue"))
+        //querySelector()
+        const query=document.querySelector("li")//can select only one
+        console.log(query);
+        //querySelectorAll()
+        const query1=document.querySelectorAll("li")//select all
+        console.log(query1);
+         //selection using id
+        const queryid=document.querySelector("#head")
+        console.log(queryid);
+        //selection using class
+        const queryclass=document.querySelector(".cls")
+        console.log(queryclass);
+       
+        const btn=document.querySelector(".btn")//for inspecting button
+        console.log(btn);
+       //event creation
+        function buttonClick()
+        {
+            alert("Welcome to coding")
+        }
+        
+    </script>
+</body>
+</html>

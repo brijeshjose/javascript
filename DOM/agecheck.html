@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>age tsk</title>
+</head>
+<body style="background-color: aqua;">
+    <center>
+    <div style=" border: 3px solid #000;width: 300px;background-color: beige;height: 300px;">
+        <center>
+        <h1>Age checker</h1>
+        <br><br>
+        <input id="agevalue" type="text"/><br>
+         <br><br>
+        <button onclick="Agechecker()" style="background-color: cornflowerblue;">check</button>
+    </center>
+    </div>
+    </center>
+</body>
+<script>
+    function Agechecker(){
+        const userAge=document.getElementById('agevalue').value
+        console.log(userAge);
+        if(userAge>=18){
+            alert("you are eligible to vote")
+        }else{
+            alert("you are not eligble to vote")
+        }
+    }
+</script>
+</html>
